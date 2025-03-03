@@ -75,6 +75,7 @@ pip install torch==2.6.0 torchvision torchaudio --index-url https://download.pyt
 
 # 2. Install pip dependencies
 python -m pip install -r requirements.txt
+pip install "httpx[socks]"
 
 # 3.1 optional Sage attention support (30% faster, easy to install on Linux but much harder on Windows)
 python -m pip install sageattention==1.0.6 
