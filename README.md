@@ -68,7 +68,8 @@ sudo apt-get update && sudo apt-get install git-lfs cbm ffmpeg
 conda install python==3.10.9
 pip install ipykernel
 
-git clone https://github.com/svjack/Wan2GP && cd Wan2GP
+#git clone https://github.com/svjack/Wan2GP && cd Wan2GP
+git clone https://github.com/deepbeepmeep/Wan2GP && cd Wan2GP
 
 # 1 Install pytorch 2.6.0
 pip install torch==2.6.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/test/cu124  
