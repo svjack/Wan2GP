@@ -81,6 +81,8 @@ pip install "httpx[socks]"
 # 3.1 optional Sage attention support (30% faster, easy to install on Linux but much harder on Windows)
 python -m pip install sageattention==1.0.6 
 
+python wgp.py --i2v-14B --server-name "0.0.0.0" --server-port 7860  --share
+
 # or for Sage Attention 2 (40% faster, sorry only manual compilation for the moment)
 git pull https://github.com/thu-ml/SageAttention
 cd sageattention 
