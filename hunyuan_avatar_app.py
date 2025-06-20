@@ -135,6 +135,35 @@ def load_models(model_type):
     pipe["transformer"].enable_cache = False
     return wan_model, offloadobj, pipe["transformer"]
 
+'''
+wan_model, offloadobj, _ = load_models(transformer_type)
+wan_model._interrupt = False
+model_filename = get_model_filename(transformer_type, transformer_quantization, transformer_dtype_policy)
+model_type = get_model_type(model_filename)
+
+from PIL import Image
+image = Image.open("玛威卡.jpg")
+audio_path = "玛威卡.wav"
+prompt = '''
+The poster prominently features the bold, glowing title "Electronics" in a futuristic chrome font at the top, with the tagline "Innovate Your World" in smaller, sleek silver lettering along the bottom edge. Centered behind this text, Mavuika from Genshin Impact commands attention in a glossy black bikesuit, her form-fitting outfit accentuated by a lowered zipper revealing subtle cleavage and metallic tech-inspired earrings glinting under dynamic lighting. She wears reflective aviator sunglasses and elbow-length black leather gloves, flashing a confident smile with lips parted mid-laugh while locking eyes directly with the viewer. Her long sleeves ripple with motion against a backdrop of holographic circuitry and neon-blue data streams, rendered in ultra-high resolution to highlight every strand of wind-swept hair and the suit's textured sheen.
+'''
+
+samples = wan_model.generate(
+            input_prompt=prompt,
+            input_ref_images=[image],
+            audio_guide=audio_path,
+            frame_num=49,  # Default frame number for Hunyuan Avatar
+            height=832,
+            width=480,
+            fit_into_canvas=True,
+            sampling_steps=30,
+            guide_scale=7.5,
+            seed=42,
+            audio_cfg_scale=7.5,
+            fps=25,
+        )
+'''
+
 def generate_video(image, text, audio, progress=gr.Progress()):
     global wan_model, offloadobj
 
